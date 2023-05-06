@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Form from "./Form";
 import Buttons from "./Buttons";
 import Section from "./Section";
@@ -8,69 +8,17 @@ import Container from "./Container";
 import TasksSectionNav from "./TasksSectionNav";
 import TasksSectionNavHeader from "./TasksSectionNavHeader";
 
-const getInitialTasks = () => {
-  const tasksFromLocalStorage = localStorage.getItem("tasksData");
-  return tasksFromLocalStorage
-    ? JSON.parse(tasksFromLocalStorage)
-    : [
-        { id: 1, content: "Odbyć podróż dookoła świata", done: false },
-        { id: 2, content: "Polecieć samolotem", done: true },
-      ];
-};
+import { useTasks } from "./useTasks";
 
 function App() {
-
-  
-
   const [hideDone, setHideDone] = useState(false);
-
-  const [tasks, setTasks] = useState(getInitialTasks);
-
-  useEffect(() => {
-    localStorage.setItem("tasksData", JSON.stringify(tasks));
-  }, [tasks]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
   };
 
-  const setAllDone = () => {
-    setTasks((tasks) => tasks.map((task) => ({ ...task, done: true })));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks((tasks) =>
-      tasks.map((task) => {
-        if (task.id === id) {
-          return { ...task, done: !task.done };
-        }
-        return task;
-      })
-    );
-  };
-
-  const removeTask = (id) => {
-    setTasks((tasks) =>
-      tasks.filter((task) => {
-        if (task.id !== id) {
-          return { ...task };
-        }
-        return null;
-      })
-    );
-  };
-
-  const addNewTask = (newTaskContent) => {
-    if (!newTaskContent) return;
-    setTasks([
-      ...tasks,
-      {
-        content: newTaskContent,
-        done: false,
-        id: tasks.length === 0 ? 1 : tasks[tasks.length - 1].id + 1,
-      },
-    ]);
-  };
+  const { tasks, setAllDone, toggleTaskDone, removeTask, addNewTask } =
+    useTasks();
 
   return (
     <Container>
