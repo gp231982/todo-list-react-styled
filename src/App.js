@@ -19,6 +19,9 @@ const getInitialTasks = () => {
 };
 
 function App() {
+
+  
+
   const [hideDone, setHideDone] = useState(false);
 
   const [tasks, setTasks] = useState(getInitialTasks);
@@ -58,6 +61,7 @@ function App() {
   };
 
   const addNewTask = (newTaskContent) => {
+    if (!newTaskContent) return;
     setTasks([
       ...tasks,
       {
