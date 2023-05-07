@@ -1,4 +1,4 @@
-# tasksList-application-react
+# tasksList-application-react-styled
 
 ## Description
 
