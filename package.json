@@ -2,7 +2,7 @@
   "name": "todo-list-react-styled",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/gp231982/todo-list-react-styled",
+  "homepage": "https://gp231982.github.io/todo-list-react-styled",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
