@@ -4,7 +4,6 @@ import {useSelector, useDispatch} from "react-redux";
 
 const Buttons = () => {
 
-  // const {tasks, hideDone} = useSelector(selectTasksState);
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
 
