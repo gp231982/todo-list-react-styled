@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 export const List = styled.ul`
@@ -72,4 +73,15 @@ export const TaskSpan = styled.span`
     css`
       text-decoration: line-through;
     `}
+`;
+
+export const StyledLink = styled(Link)`
+  color: rgb(0, 153, 186);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    color: rgba(0, 153, 186, 0.8);
+    font-weight: normal;
+  }
 `;

@@ -17,9 +17,11 @@ const Buttons = ({ sectionClassName }) => {
   return (
     <>
       {sectionClassName === "addTaskSection" ? (
-        <Button onClick={() => dispatch(fetchExampleTasks())}>
-          Pobierz przykładowe zadania
-        </Button>
+        <>
+          <Button onClick={() => dispatch(fetchExampleTasks())}>
+            Pobierz przykładowe zadania
+          </Button>
+        </>
       ) : null}
       {sectionClassName === "tasksSection" && tasks.length > 0 && (
         <>
