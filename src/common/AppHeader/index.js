@@ -1,3 +1,3 @@
 import { Header } from "./styled";
-const AppHeader = () => <Header>Lista zadań</Header>;
+const AppHeader = ({title}) => <Header>{title}</Header>;
 export default AppHeader;

@@ -18,6 +18,7 @@ export const NewTaskInput = styled.input`
   margin-top: 30px;
   margin-bottom: 30px;
   margin-left: 20px;
+  margin-right: 20px;
 
   @media (max-width: 767px) {
     flex-basis: 95%;
