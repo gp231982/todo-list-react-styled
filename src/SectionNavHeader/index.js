@@ -1,7 +1,7 @@
 import { NavigationHeader } from "./styled";
 
-const TasksSectionNavHeader = ({title}) => (
+const SectionNavHeader = ({ title }) => (
   <NavigationHeader>{title}</NavigationHeader>
 );
 
-export default TasksSectionNavHeader;
+export default SectionNavHeader;

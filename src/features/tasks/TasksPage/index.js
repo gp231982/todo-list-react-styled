@@ -5,8 +5,8 @@ import Section from "../../../common/Section";
 import TaskList from "./TaskList";
 import AppHeader from "../../../common/AppHeader";
 import Container from "../../../common/Container";
-import TasksSectionNav from "../../../TasksSectionNav";
-import TasksSectionNavHeader from "../../../TasksSectionNavHeader";
+import SectionNav from "../../../SectionNav";
+import SectionNavHeader from "../../../SectionNavHeader";
 import Search from "./Search";
 
 function TasksPage() {
@@ -16,27 +16,29 @@ function TasksPage() {
       <Section
         sectionClassName="addTaskSection"
         extraHeaderContent={
-          <TasksSectionNav sectionClassName="addTaskSection">
-            <TasksSectionNavHeader title="Dodaj nowe zadanie" />
+          <SectionNav sectionClassName="addTaskSection">
+            <SectionNavHeader title="Dodaj nowe zadanie" />
             <Buttons sectionClassName="addTaskSection" />
-          </TasksSectionNav>
+          </SectionNav>
         }
         children={<Form />}
       />
       <Section
         sectionClassName="addTaskSection"
-        headerClassName="addTaskSection__header"
-        title="Wyszukiwarka"
-        extraHeaderContent={null}
+        extraHeaderContent={
+          <SectionNav sectionClassName="addTaskSection">
+            <SectionNavHeader title="Wyszukiwarka" />
+          </SectionNav>
+        }
         children={<Search />}
       />
       <Section
         sectionClassName="tasksSection"
         extraHeaderContent={
-          <TasksSectionNav sectionClassName="tasksSection">
-            <TasksSectionNavHeader title="Lista zadań" />
+          <SectionNav sectionClassName="tasksSection">
+            <SectionNavHeader title="Lista zadań" />
             <Buttons sectionClassName="tasksSection" />
-          </TasksSectionNav>
+          </SectionNav>
         }
         children={<TaskList />}
       />

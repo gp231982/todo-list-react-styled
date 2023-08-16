@@ -1,7 +1,7 @@
 import { Navigation } from "./styled";
 
-const TasksSectionNav = ({ children, sectionClassName }) => (
+const SectionNav = ({ children, sectionClassName }) => (
   <Navigation sectionClassName={sectionClassName}>{children}</Navigation>
 );
 
-export default TasksSectionNav;
+export default SectionNav;
