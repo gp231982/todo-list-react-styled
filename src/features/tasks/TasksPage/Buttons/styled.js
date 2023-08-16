@@ -12,6 +12,12 @@ export const Button = styled.button`
     color: rgb(0, 153, 186, 0.8);
   }
 
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      opacity: 0.5;
+    `}
+
   ${({ tasksAllDone }) =>
     tasksAllDone &&
     css`

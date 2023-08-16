@@ -2,13 +2,13 @@
 
 ## Description
 
-This is a simple react-redux taskList application with interactions (adding new tasks, removing them, marking particular task done or not, marking all tasks done, hiding done tasks and showing them) created with create-react-app package (refactored from tasksList repository made in vanila js).
+This is a simple react-redux taskList application with interactions (adding new tasks, removing them, marking particular task done or not, marking all tasks done, hiding done tasks and showing them) created with create-react-app package (refactored from tasksList repository made in vanila js). Application also enables to filter tasks with using of React Router hooks and management of URL parameters.
 
 https://gp231982.github.io/todo-list-react-styled/
 
 ## Demo
 
-https://user-images.githubusercontent.com/68773588/224906483-3d0b79b1-0259-405f-861d-8c234b262fac.mp4
+https://github.com/gp231982/todo-list-react-styled/assets/68773588/759f3163-51cd-4084-b604-f4e0aeb53d85
 
 ## Technologies and conventions
 
@@ -25,6 +25,8 @@ https://user-images.githubusercontent.com/68773588/224906483-3d0b79b1-0259-405f-
   - Template Literals
 - BEM and Immutability convention
 - Redux with toolkit
+- Redux Saga
+- React Router and URL parameters management
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

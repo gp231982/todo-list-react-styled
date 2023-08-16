@@ -1,8 +1,7 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Navigation = styled.nav`
   display: grid;
-  /* grid-template-columns: 1fr auto auto; */
   grid-template-rows: 1;
   align-items: center;
   gap: 20px;
@@ -10,12 +9,14 @@ export const Navigation = styled.nav`
   border-bottom: 1px solid #dddada;
 
   ${({ sectionClassName }) =>
-    sectionClassName === "tasksSection" && css`
+    sectionClassName === "tasksSection" &&
+    css`
       grid-template-columns: 1fr auto auto;
     `}
 
   ${({ sectionClassName }) =>
-    sectionClassName === "addTaskSection" && css`
+    sectionClassName === "addTaskSection" &&
+    css`
       grid-template-columns: 1fr auto;
     `}
 

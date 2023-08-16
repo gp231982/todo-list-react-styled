@@ -24,9 +24,9 @@ function TasksPage() {
         children={<Form />}
       />
       <Section
-        sectionClassName="addTaskSection"
+        sectionClassName="searchTaskSection"
         extraHeaderContent={
-          <SectionNav sectionClassName="addTaskSection">
+          <SectionNav sectionClassName="searchTaskSection">
             <SectionNavHeader title="Wyszukiwarka" />
           </SectionNav>
         }

@@ -8,6 +8,14 @@ export const StyledSection = styled.section`
       margin-bottom: 10px;
     `}
 
+    ${({ className }) =>
+    className === "searchTaskSection" &&
+    css`
+      margin: 0 auto;
+      padding-bottom: 20px;
+      background-color: #ffffff;
+    `}
+
   ${({ className }) =>
     className === "tasksSection" &&
     css`
