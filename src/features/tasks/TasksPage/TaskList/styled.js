@@ -67,6 +67,7 @@ export const TaskSpan = styled.span`
   font-size: 16px;
   word-break: break-word;
   flex-grow: 1;
+  color: rgb(0, 153, 186);
 
   ${({ done }) =>
     done &&

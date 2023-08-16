@@ -8,12 +8,8 @@ import Container from "../../../common/Container";
 import TasksSectionNav from "../../../TasksSectionNav";
 import TasksSectionNavHeader from "../../../TasksSectionNavHeader";
 import Search from "./Search";
-import { Button } from "./Buttons/styled";
-import { useDispatch } from "react-redux";
-import { fetchExampleTasks } from "../tasksSlice";
 
 function TasksPage() {
-  const dispatch = useDispatch();
   return (
     <Container>
       <AppHeader title="Lista zadań" />
@@ -21,7 +17,7 @@ function TasksPage() {
         sectionClassName="addTaskSection"
         extraHeaderContent={
           <TasksSectionNav sectionClassName="addTaskSection">
-            <TasksSectionNavHeader title="Dodaj nowe zadanie"/>
+            <TasksSectionNavHeader title="Dodaj nowe zadanie" />
             <Buttons sectionClassName="addTaskSection" />
           </TasksSectionNav>
         }

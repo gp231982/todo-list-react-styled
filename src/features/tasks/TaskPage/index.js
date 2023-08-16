@@ -7,6 +7,7 @@ import { getTaskById } from "../tasksSlice";
 
 function TaskPage() {
   const { id } = useParams();
+  console.log(useParams())
   const task = useSelector((state) => getTaskById(state, id));
 
   return (
@@ -17,9 +18,11 @@ function TaskPage() {
         headerClassName="addTaskSection__header"
         title={task ? task.content : "Nie znaleziono zadania 😥"}
         extraHeaderContent={
-          <p style={{ padding: "20px" }}>
-            <strong>Ukończono:</strong> {task.done ? "tak" : "nie"}
-          </p>
+          task && (
+            <p style={{ padding: "20px" }}>
+              <strong>Ukończono:</strong> {task.done ? "tak" : "nie"}
+            </p>
+          )
         }
       />
     </Container>

@@ -11,15 +11,22 @@ import { useSelector, useDispatch } from "react-redux";
 const Buttons = ({ sectionClassName }) => {
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
-
   const dispatch = useDispatch();
+  const fetchingExampleTasks = useSelector(
+    (state) => state.tasks.fetchingExampleTasks
+  );
 
   return (
     <>
       {sectionClassName === "addTaskSection" ? (
         <>
-          <Button onClick={() => dispatch(fetchExampleTasks())}>
-            Pobierz przykładowe zadania
+          <Button
+            onClick={() => dispatch(fetchExampleTasks())}
+            disabled={fetchingExampleTasks}
+          >
+            {fetchingExampleTasks
+              ? "Pobieranie trwa..."
+              : "Pobierz przykładowe zadania"}
           </Button>
         </>
       ) : null}

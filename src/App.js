@@ -4,7 +4,6 @@ import TasksPage from "./features/tasks/TasksPage";
 import TaskPage from "./features/tasks/TaskPage";
 import AuthorPage from "./features/author/AuthorPage";
 import { Navigation, NavList, NavItem, StyledNavLink } from "./styled";
-// import styled from "styled-components";
 
 
 const App = () => (

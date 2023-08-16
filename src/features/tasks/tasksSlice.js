@@ -6,6 +6,7 @@ const tasksSlice = createSlice({
   initialState: {
     tasks: getTasksFromLocalStorage(),
     hideDone: false,
+    fetchingExampleTasks: false,
   },
   reducers: {
     addTask: ({ tasks }, { payload: task }) => {
@@ -36,8 +37,18 @@ const tasksSlice = createSlice({
       }
     },
     fetchExampleTasks: () => {},
-    setTasks: (state, { payload: exampleTasks }) => {
-      state.tasks = exampleTasks;
+
+    fetchExampleTasksStart: (state) => {
+      state.fetchingExampleTasks = true;
+    },
+
+    fetchExampleTasksSuccess: (state, { payload }) => {
+      state.tasks = payload;
+      state.fetchingExampleTasks = false;
+    },
+
+    fetchExampleTasksFailure: (state) => {
+      state.fetchingExampleTasks = false;
     },
   },
 });
@@ -49,25 +60,24 @@ export const {
   setAllDone,
   removeTask,
   fetchExampleTasks,
+  fetchExampleTasksStart,
+  fetchExampleTasksSuccess,
+  fetchExampleTasksFailure,
   setTasks,
 } = tasksSlice.actions;
 
-const selectTasksState = (state) =>
-  state.tasks; /*zwraca stan slica o nazwie name: tasks; 
-  jeśli tnam by było np. zadania to wtedy zwraca state.zadania*/
+const selectTasksState = (state) => state.tasks;
 export const selectHideDone = (state) => selectTasksState(state).hideDone;
 export const selectTasks = (state) => selectTasksState(state).tasks;
 
 export const getTaskById = (state, taskId) =>
   selectTasks(state).find(({ id }) => id === taskId);
-/* bez destruktyrzacji  .find(task => task.id === taskId) */
 
 export const selectTasksByQuery = (state, query) => {
   const tasks = selectTasks(state);
   if (!query || query.trim() === "") {
     return tasks;
   }
-
   return selectTasks(state).filter((task) =>
     task.content.toUpperCase().includes(query.trim().toUpperCase())
   );
